@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="GUI/AddDatosAparatoGeneral.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddDatosDispositivoGeneral.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddDatosReparacion.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddSelecTipo.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindow.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindow/AddDatosAparatoGeneral.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindow/AddDatosRadio.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindow/AddDatosReparacion.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindow/AddSelecTipo.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindow/AddWindow.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindowStaged/AddDatosAdaptadorTDT.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindowStaged/AddDatosAparatoGeneral.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindowStaged/AddDatosRadio.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindowStaged/AddDatosReparacion.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindowStaged/AddDatosReprDVD.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindowStaged/AddDatosTelevision.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindowStaged/AddSelecTipo.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindowStaged/AddWindow.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/App.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/MainWindow.axaml" value="GUI/GUI.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

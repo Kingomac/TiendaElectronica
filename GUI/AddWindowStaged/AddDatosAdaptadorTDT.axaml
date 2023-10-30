@@ -1,0 +1,34 @@
+<gui:ValidableUserControl xmlns="https://github.com/avaloniaui"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                          xmlns:gui="clr-namespace:GUI"
+                          mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+                          x:Class="GUI.AddWindowStaged.AddDatosAdaptadorTDT">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
+        <TextBlock Margin="20" FontSize="24" TextAlignment="Center">Datos del aparato</TextBlock>
+        <StackPanel.Styles>
+            <Style Selector="StackPanel">
+                <Setter Property="Background" Value="Aqua" />
+            </Style>
+        </StackPanel.Styles>
+        <Grid ColumnDefinitions="Auto,300" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid Grid.Column="0" RowDefinitions="35" Classes="aaa"> <!-- horas trabajadas y coste pieza -->
+                <Grid.Styles>
+                    <Style Selector="Grid.aaa">
+                        <Setter Property="Background" Value="Yellow" />
+                    </Style>
+                </Grid.Styles>
+                <Label Grid.Row="0">Tiempo máximo de grabación</Label>
+            </Grid>
+            <Grid Grid.Column="1" RowDefinitions="35" Classes="bbb">
+                <Grid.Styles>
+                    <Style Selector="Grid.bbb">
+                        <Setter Property="Background" Value="HotPink" />
+                    </Style>
+                </Grid.Styles>
+                <NumericUpDown HorizontalAlignment="Stretch" Grid.Row="0" Name="TiempoMaximoGrabacionTxt" />
+            </Grid>
+        </Grid>
+    </StackPanel>
+</gui:ValidableUserControl>
