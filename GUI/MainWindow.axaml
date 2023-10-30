@@ -32,18 +32,12 @@
             </ListBox>
         </StackPanel>
         <DockPanel DockPanel.Dock="Right">
-            <StackPanel DockPanel.Dock="Bottom" Classes="botpanel" Orientation="Horizontal"
-                        HorizontalAlignment="Center" VerticalAlignment="Bottom">
-                <StackPanel.Styles>
-                    <Style Selector="StackPanel.botpanel">
-                        <Setter Property="Background" Value="White" />
-                    </Style>
-                </StackPanel.Styles>
-                <Button>Borrar</Button>
-                <Button>Modificar</Button>
-                <Button Name="AddBtn" Click="AddBtn_OnClick">Añadir</Button>
-            </StackPanel>
-            <ScrollViewer Classes="rightpanel">
+            <Menu DockPanel.Dock="Bottom" HorizontalAlignment="Center">
+                <MenuItem Header="Añadir" Name="AddBtn" Click="AddBtn_OnClick" />
+                <MenuItem Header="Borrar" />
+                <MenuItem Header="Modificar" />
+            </Menu>
+            <ScrollViewer DockPanel.Dock="Top" Classes="rightpanel">
                 <ScrollViewer.Styles>
                     <Style Selector="ScrollViewer.rightpanel">
                         <Setter Property="Background" Value="LightBlue" />
