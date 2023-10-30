@@ -4,8 +4,8 @@
                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                        xmlns:guiadd="clr-namespace:GUI.AddWindowStaged"
                        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-                       x:Class="GUI.AddWindowStaged.AddDatosRadio"
-                       x:DataType="guiadd:AddDatosRadio">
+                       x:Class="GUI.AddWindowStaged.DatosRadio"
+                       x:DataType="guiadd:DatosRadio">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
         <TextBlock Margin="20" FontSize="24" TextAlignment="Center">Bandas de radio soportadas</TextBlock>
         <StackPanel.Styles>
@@ -15,9 +15,9 @@
         </StackPanel.Styles>
         <StackPanel HorizontalAlignment="Center" Classes="radiobtnspanel">
             <RadioButton IsChecked="{Binding AM}"
-                         Content="AM" GroupName="BandasRadio" />
-            <RadioButton IsChecked="{Binding FM}" Content="FM" GroupName="BandasRadio" />
-            <RadioButton IsChecked="{Binding AM_FM}" Content="AM/FM" GroupName="BandasRadio" />
+                         Content="AM" GroupName="BandasRadio" Name="RadioBtn_AM" />
+            <RadioButton IsChecked="{Binding FM}" Content="FM" GroupName="BandasRadio" Name="RadioBtn_FM" />
+            <RadioButton IsChecked="{Binding AM_FM}" Content="AM/FM" GroupName="BandasRadio" Name="RadioBtn_AMFM" />
         </StackPanel>
     </StackPanel>
 </guiadd:AparatoCreator>

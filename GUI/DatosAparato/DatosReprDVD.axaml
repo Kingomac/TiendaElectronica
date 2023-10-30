@@ -4,10 +4,10 @@
                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                        xmlns:guiadd="clr-namespace:GUI.AddWindowStaged"
                        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-                       x:Class="GUI.AddWindowStaged.AddDatosReprDVD"
-                       x:DataType="guiadd:AddDatosReprDVD">
+                       x:Class="GUI.AddWindowStaged.DatosReprDVD"
+                       x:DataType="guiadd:DatosReprDVD">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
-        <TextBlock Margin="20" FontSize="24" TextAlignment="Center">Datos del aparato</TextBlock>
+        <TextBlock Margin="20" FontSize="24" TextAlignment="Center">Datos del reproductor DVD</TextBlock>
         <StackPanel.Styles>
             <Style Selector="StackPanel">
                 <Setter Property="Background" Value="Aqua" />

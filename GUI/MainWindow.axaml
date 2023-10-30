@@ -2,14 +2,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:reparaciones="clr-namespace:TiendaElectronica.Core.Reparaciones;assembly=Core"
+        xmlns:datosRep="clr-namespace:GUI.DatosReparacion"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="GUI.MainWindow"
         Title="GUI"
         Loaded="Control_OnLoaded"
         MinHeight="300"
         MinWidth="300"
-        x:CompileBindings="True">
+        x:CompileBindings="True"
+        Closed="MainWindow_OnClosed">
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Classes="leftpanel">
             <StackPanel.Styles>
@@ -21,13 +22,7 @@
             <ListBox Name="AparatosList" SelectionChanged="AparatosList_OnSelectionChanged"
                      SelectionMode="AlwaysSelected,Single">
                 <ListBox.ItemTemplate>
-                    <DataTemplate DataType="reparaciones:Reparacion">
-                        <Grid ColumnDefinitions="*,10,*">
-                            <TextBlock Grid.Column="0" Text="{Binding Dispositivo.NumeroSerie}" />
-                            <TextBlock Grid.Column="1" Text="-" />
-                            <TextBlock Grid.Column="2" Text="{Binding Dispositivo.Modelo}" />
-                        </Grid>
-                    </DataTemplate>
+                    <datosRep:ReparacionListDataTemplate />
                 </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
@@ -45,45 +40,14 @@
                 </ScrollViewer.Styles>
                 <StackPanel Classes="rightpanel" Margin="20">
                     <Label Margin="3 5 3 1">Datos reparación:</Label>
-                    <Border BorderBrush="Black" BorderThickness="2" CornerRadius="3" Padding="4" Margin="3 0 3 3">
-                        <Grid ColumnDefinitions="Auto,100*" Margin="10">
-                            <Grid RowDefinitions="35,10,35" Grid.Column="0">
-                                <Label HorizontalAlignment="Right" Grid.Row="0">Horas trabajadas</Label>
-                                <Label HorizontalAlignment="Right" Grid.Row="2">Coste piezas</Label>
-                            </Grid>
-                            <Grid RowDefinitions="35,10,35" Grid.Column="1">
-                                <TextBox Name="HorasTrabajadasTxt" Grid.Row="0">aaa</TextBox>
-                                <TextBox Name="CostePiezasTxt" Grid.Row="2">aaaa</TextBox>
-                            </Grid>
-                        </Grid>
-                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="2" CornerRadius="3" Padding="4" Margin="3 0 3 3"
+                            Name="BorderDatosReparacion" />
                     <Label Margin="3 5 3 1">Datos dispositivo:</Label>
-                    <Border BorderBrush="Black" BorderThickness="2" CornerRadius="3" Padding="4" Margin="3 0 3 3">
-                        <Grid ColumnDefinitions="Auto,100*" Margin="10">
-                            <Grid RowDefinitions="35,10,35,10,35" Grid.Column="0">
-                                <Label Grid.Row="0" HorizontalContentAlignment="Right"
-                                       VerticalContentAlignment="Center">
-                                    Número de serie
-                                </Label>
-                                <Label Grid.Row="2" HorizontalContentAlignment="Right"
-                                       VerticalContentAlignment="Center">
-                                    Modelo
-                                </Label>
-                                <Label Grid.Row="4" HorizontalContentAlignment="Right"
-                                       VerticalContentAlignment="Center">
-                                    Precio de reparación por hora
-                                </Label>
-                            </Grid>
-                            <Grid Grid.Column="1" RowDefinitions="35,10,35,10,35">
-                                <TextBox Name="NumeroSerieTxt" Grid.Row="0">aaa</TextBox>
-                                <TextBox Name="ModeloTxt" Grid.Row="2">aaa</TextBox>
-                                <TextBox Name="PrecioReparacionHoraTxt" Grid.Row="4" IsReadOnly="True">aaa</TextBox>
-                            </Grid>
-                        </Grid>
-                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="2" CornerRadius="3" Padding="4" Margin="3 0 3 3"
+                            Name="BorderDatosAparatoGeneral" />
                     <Label Margin="3 5 3 1" Name="LabelDatosDispEsp" />
                     <Border BorderBrush="Black" BorderThickness="2" CornerRadius="3" Padding="4" Margin="3 0 3 3"
-                            Name="BorderDatosDispEsp" />
+                            Name="BorderDatosAparatoEspecifico" />
                 </StackPanel>
             </ScrollViewer>
         </DockPanel>

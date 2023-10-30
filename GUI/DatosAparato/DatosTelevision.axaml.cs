@@ -3,11 +3,21 @@ using TiendaElectronica.Core.Aparatos;
 
 namespace GUI.AddWindowStaged;
 
-public partial class AddDatosTelevision : AparatoCreator
+public partial class DatosTelevision : AparatoCreator
 {
-    public AddDatosTelevision()
+    public DatosTelevision()
     {
         InitializeComponent();
+    }
+
+    public DatosTelevision(Televisor televisor) : this()
+    {
+        PulgadasTxt.Value = (decimal?)televisor.Pulgadas;
+    }
+
+    public DatosTelevision(Televisor televisor, bool isReadOnly) : this(televisor)
+    {
+        PulgadasTxt.IsReadOnly = isReadOnly;
     }
 
     public override bool Validated { get; }

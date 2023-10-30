@@ -3,12 +3,22 @@ using TiendaElectronica.Core.Aparatos;
 
 namespace GUI.AddWindowStaged;
 
-public partial class AddDatosReprDVD : AparatoCreator
+public partial class DatosReprDVD : AparatoCreator
 {
-    public AddDatosReprDVD()
+    public DatosReprDVD()
     {
         InitializeComponent();
         DataContext = this;
+    }
+
+    public DatosReprDVD(ReproductorDVD reproductorDvd) : this()
+    {
+        TiempoGrabacionTxt.Value = (decimal)reproductorDvd.TiempoGrabacion;
+    }
+
+    public DatosReprDVD(ReproductorDVD reproductorDvd, bool isReadOnly) : this(reproductorDvd)
+    {
+        TiempoGrabacionTxt.IsReadOnly = isReadOnly;
     }
 
     public bool BlueRay { get; set; } = false;

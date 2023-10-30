@@ -1,7 +1,8 @@
-using System.Diagnostics;
+using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using GUI.AddWindowStaged;
+using GUI.DatosReparacion;
 using TiendaElectronica.Core;
 using TiendaElectronica.Core.Reparaciones;
 
@@ -23,13 +24,10 @@ public partial class MainWindow : Window
 
     private void AparatosList_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
-        var rep = (Reparacion)e.AddedItems[0];
-        if (rep == null) Debug.WriteLine("rep is null on selectionChanged");
-        HorasTrabajadasTxt.Text = rep.HorasTrabajadas.ToString();
-        CostePiezasTxt.Text = rep.CostePiezas.ToString();
-        NumeroSerieTxt.Text = rep.Dispositivo.NumeroSerie.ToString();
-        ModeloTxt.Text = rep.Dispositivo.Modelo;
-        PrecioReparacionHoraTxt.Text = rep.Dispositivo.PrecioReparacionHora.ToString();
+        var rep = (Reparacion)(e.AddedItems[0] ?? throw new Exception());
+        BorderDatosReparacion.Child = new DatosReparacionGeneral(rep, true);
+        BorderDatosAparatoGeneral.Child = new DatosAparatoGeneral(rep.Dispositivo, true);
+        BorderDatosAparatoEspecifico.Child = DatosPanelFactory.Create(rep.Dispositivo, true);
     }
 
     private async void AddBtn_OnClick(object? sender, RoutedEventArgs e)
@@ -40,5 +38,10 @@ public partial class MainWindow : Window
             AparatosList.Items.Add(rep);
         });
         await addWindow.ShowDialog(this);
+    }
+
+    private void MainWindow_OnClosed(object? sender, EventArgs e)
+    {
+        ArchivoReparaciones.GuardarFichero();
     }
 }

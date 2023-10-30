@@ -24,6 +24,7 @@ public partial class AddSelecTipo : ValidableUserControl
     public AddSelecTipo()
     {
         InitializeComponent();
+        DataContext = this;
         //AparatoTipoSelect.ItemsSource = tipos.Keys;
         botones.Add(RadioBtn);
         botones.Add(TelevisionBtn);
@@ -31,16 +32,21 @@ public partial class AddSelecTipo : ValidableUserControl
         botones.Add(ReproductorDVDBtn);
     }
 
+    public Geometry RadioIcon => AparatoPaths.Radio;
+    public Geometry AdaptadorTdtIcon => AparatoPaths.AdaptadorTDT;
+    public Geometry TelevisorIcon => AparatoPaths.Televisor;
+    public Geometry ReproductorDvdIcon => AparatoPaths.ReproductorDVD;
+
     public Button? Selected { get; private set; }
 
     public override bool Validated => Selected == null;
 
     public AparatoCreator GetNextStageControl()
     {
-        if (Selected == RadioBtn) return new AddDatosRadio();
-        if (Selected == TelevisionBtn) return new AddDatosTelevision();
-        if (Selected == AdaptadorTDTBtn) return new AddDatosAdaptadorTDT();
-        if (Selected == ReproductorDVDBtn) return new AddDatosReprDVD();
+        if (Selected == RadioBtn) return new DatosRadio();
+        if (Selected == TelevisionBtn) return new DatosTelevision();
+        if (Selected == AdaptadorTDTBtn) return new DatosAdaptadorTDT();
+        if (Selected == ReproductorDVDBtn) return new DatosReprDVD();
         throw new InvalidSelectedButton();
     }
 

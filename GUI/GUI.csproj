@@ -41,6 +41,30 @@
             <DependentUpon>AddWindow.axaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Update="DatosAparato\DatosTelevision.axaml.cs">
+            <DependentUpon>DatosTelevision.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="DatosAparato\DatosReprDVD.axaml.cs">
+            <DependentUpon>DatosReprDVD.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="DatosAparato\DatosRadio.axaml.cs">
+            <DependentUpon>DatosRadio.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="DatosAparato\DatosAparatoGeneral.axaml.cs">
+            <DependentUpon>DatosAparatoGeneral.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="DatosAparato\DatosAdaptadorTDT.axaml.cs">
+            <DependentUpon>DatosAdaptadorTDT.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="DatosReparacion\DatosReparacionGeneral.axaml.cs">
+            <DependentUpon>DatosReparacion.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
     </ItemGroup>
 
 

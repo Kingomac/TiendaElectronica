@@ -3,11 +3,21 @@ using TiendaElectronica.Core.Aparatos;
 
 namespace GUI.AddWindowStaged;
 
-public partial class AddDatosAdaptadorTDT : AparatoCreator
+public partial class DatosAdaptadorTDT : AparatoCreator
 {
-    public AddDatosAdaptadorTDT()
+    public DatosAdaptadorTDT()
     {
         InitializeComponent();
+    }
+
+    public DatosAdaptadorTDT(AdaptadorTDT adaptadorTdt) : this()
+    {
+        TiempoMaximoGrabacionTxt.Value = (decimal)adaptadorTdt.TiempoMaximoGrabacion;
+    }
+
+    public DatosAdaptadorTDT(AdaptadorTDT adaptadorTdt, bool isReadOnly) : this(adaptadorTdt)
+    {
+        TiempoMaximoGrabacionTxt.IsReadOnly = isReadOnly;
     }
 
     public override bool Validated { get; }

@@ -4,9 +4,9 @@
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     xmlns:gui="clr-namespace:GUI.AddWindowStaged"
                     mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-                    x:Class="GUI.AddWindowStaged.AddDatosAdaptadorTDT">
+                    x:Class="GUI.AddWindowStaged.DatosTelevision">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
-        <TextBlock Margin="20" FontSize="24" TextAlignment="Center">Datos del aparato</TextBlock>
+        <TextBlock Margin="20" FontSize="24" TextAlignment="Center">Datos de la televisión</TextBlock>
         <StackPanel.Styles>
             <Style Selector="StackPanel">
                 <Setter Property="Background" Value="Aqua" />
@@ -19,7 +19,7 @@
                         <Setter Property="Background" Value="Yellow" />
                     </Style>
                 </Grid.Styles>
-                <Label Grid.Row="0">Tiempo máximo de grabación</Label>
+                <Label VerticalAlignment="Center" Grid.Row="0">Pulgadas</Label>
             </Grid>
             <Grid Grid.Column="1" RowDefinitions="35" Classes="bbb">
                 <Grid.Styles>
@@ -27,7 +27,7 @@
                         <Setter Property="Background" Value="HotPink" />
                     </Style>
                 </Grid.Styles>
-                <NumericUpDown HorizontalAlignment="Stretch" Grid.Row="0" Name="TiempoMaximoGrabacionTxt" />
+                <NumericUpDown HorizontalAlignment="Stretch" Grid.Row="0" Name="PulgadasTxt" />
             </Grid>
         </Grid>
     </StackPanel>

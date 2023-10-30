@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="500"
         xmlns:addWindow="clr-namespace:GUI.AddWindowStaged"
+        xmlns:datosReparacion="clr-namespace:GUI.DatosReparacion"
         x:Class="GUI.AddWindowStaged.AddWindow"
         Title="Crear reparación"
         CanResize="False"
@@ -15,8 +16,8 @@
         </Button>
         <Carousel DockPanel.Dock="Top" Name="CarouselControl">
             <Carousel.Items>
-                <addWindow:AddDatosReparacion Name="AddDatosReparacion" />
-                <addWindow:AddDatosAparatoGeneral Name="AddDatosAparatoGeneral" />
+                <datosReparacion:DatosReparacionGeneral Name="AddDatosReparacion" />
+                <addWindow:DatosAparatoGeneral Name="AddDatosAparatoGeneral" />
                 <addWindow:AddSelecTipo Name="AddSelecTipo" />
             </Carousel.Items>
         </Carousel>

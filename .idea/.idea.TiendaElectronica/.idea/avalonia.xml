@@ -21,7 +21,16 @@
         <entry key="GUI/AddWindowStaged/AddDatosTelevision.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/AddWindowStaged/AddSelecTipo.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/AddWindowStaged/AddWindow.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindowStaged/DatosRadio.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/AddWindowStaged/DatosReparacion.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/App.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/DatosAparato/DatosAdaptadorTDT.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/DatosAparato/DatosAparatoGeneral.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/DatosAparato/DatosRadio.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/DatosAparato/DatosReprDVD.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/DatosAparato/DatosTelevision.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/DatosReparacion/DatosReparacion.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/DatosReparacion/DatosReparacionGeneral.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/MainWindow.axaml" value="GUI/GUI.csproj" />
       </map>
     </option>
