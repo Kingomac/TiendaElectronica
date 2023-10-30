@@ -1,10 +1,9 @@
 using System;
-using Avalonia.Controls;
-using Avalonia.Interactivity;
+using TiendaElectronica.Core.Aparatos;
 
 namespace GUI.AddWindowStaged;
 
-public partial class AddDatosRadio : ValidableUserControl
+public partial class AddDatosRadio : AparatoCreator
 {
     public AddDatosRadio()
     {
@@ -18,11 +17,18 @@ public partial class AddDatosRadio : ValidableUserControl
 
     public override bool Validated { get; }
 
-    private void CheckedChanged(object? sender, RoutedEventArgs e)
+    public override Aparato CreateAparato(uint numeroSerie, string modelo)
     {
-        if (sender == null) return;
-        var btn = (RadioButton)sender;
-        Console.WriteLine(btn.Content);
+        BandasRadio bandasRadio;
+        if (AM) bandasRadio = BandasRadio.AM;
+        else if (FM) bandasRadio = BandasRadio.FM;
+        else bandasRadio = bandasRadio = BandasRadio.AM_FM;
+        return new Radio
+        {
+            Modelo = modelo,
+            NumeroSerie = numeroSerie,
+            BandasSoportadas = bandasRadio
+        };
     }
 
     public override void HighlightErrors()

@@ -6,7 +6,7 @@
                           mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
                           x:Class="GUI.AddWindowStaged.AddDatosAparatoGeneral">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
-        <TextBlock Margin="20" FontSize="24" TextAlignment="Center">Datos del aparato</TextBlock>
+        <TextBlock Margin="20" FontSize="24" TextAlignment="Center">Datos de la reparación</TextBlock>
         <StackPanel.Styles>
             <Style Selector="StackPanel">
                 <Setter Property="Background" Value="Aqua" />
@@ -19,8 +19,8 @@
                         <Setter Property="Background" Value="Yellow" />
                     </Style>
                 </Grid.Styles>
-                <Label Grid.Row="0">Numero de serie</Label>
-                <Label Grid.Row="2">Modelo</Label>
+                <Label VerticalAlignment="Center" Grid.Row="0">Numero de serie</Label>
+                <Label VerticalAlignment="Center" Grid.Row="2">Modelo</Label>
             </Grid>
             <Grid Grid.Column="1" RowDefinitions="35,10,35" Classes="bbb">
                 <Grid.Styles>

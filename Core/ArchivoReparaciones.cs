@@ -18,7 +18,7 @@ public class ArchivoReparaciones : IEnumerable<Reparacion>
         }
     }
 
-    private List<Reparacion> Reparaciones { get; }
+    protected List<Reparacion> Reparaciones { get; }
 
     public IEnumerator<Reparacion> GetEnumerator()
     {
@@ -40,7 +40,7 @@ public class ArchivoReparaciones : IEnumerable<Reparacion>
         padreReps.Save(stream);
     }
 
-    public void Add(Reparacion rep)
+    public virtual void Add(Reparacion rep)
     {
         Reparaciones.Add(rep);
     }

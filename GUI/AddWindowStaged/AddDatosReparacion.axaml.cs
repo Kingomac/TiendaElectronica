@@ -7,8 +7,7 @@ public partial class AddDatosReparacion : ValidableUserControl
         InitializeComponent();
     }
 
-    public override bool Validated =>
-        double.TryParse(HorasTrabajadasTxt.Text, out _) && double.TryParse((string?)CostePiezasTxt.Text, out _);
+    public override bool Validated => HorasTrabajadasTxt.Value != null && CostePiezasTxt.Value != null;
 
     public override void HighlightErrors()
     {

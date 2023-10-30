@@ -20,8 +20,8 @@
                         <Setter Property="Background" Value="Yellow" />
                     </Style>
                 </Grid.Styles>
-                <Label Grid.Row="0">Horas trabajadas</Label>
-                <Label Grid.Row="2">Coste piezas</Label>
+                <Label VerticalAlignment="Center" Grid.Row="0">Horas trabajadas</Label>
+                <Label VerticalAlignment="Center" Grid.Row="2">Coste piezas</Label>
             </Grid>
             <Grid Grid.Column="1" RowDefinitions="35,10,35" Classes="bbb">
                 <Grid.Styles>
@@ -29,8 +29,8 @@
                         <Setter Property="Background" Value="HotPink" />
                     </Style>
                 </Grid.Styles>
-                <TextBox HorizontalAlignment="Stretch" Grid.Row="0" Name="HorasTrabajadasTxt" />
-                <TextBox HorizontalAlignment="Stretch" Grid.Row="2" Name="CostePiezasTxt" />
+                <NumericUpDown HorizontalAlignment="Stretch" Grid.Row="0" Name="HorasTrabajadasTxt" />
+                <NumericUpDown HorizontalAlignment="Stretch" Grid.Row="2" Name="CostePiezasTxt" />
             </Grid>
         </Grid>
     </StackPanel>

@@ -18,7 +18,7 @@ public partial class MainWindow : Window
 
     private void Control_OnLoaded(object? sender, RoutedEventArgs e)
     {
-        AparatosList.ItemsSource = ArchivoReparaciones;
+        foreach (var rep in ArchivoReparaciones) AparatosList.Items.Add(rep);
     }
 
     private void AparatosList_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
@@ -34,7 +34,11 @@ public partial class MainWindow : Window
 
     private async void AddBtn_OnClick(object? sender, RoutedEventArgs e)
     {
-        Window addWindow = new AddWindow();
+        var addWindow = new AddWindow(rep =>
+        {
+            ArchivoReparaciones.Add(rep);
+            AparatosList.Items.Add(rep);
+        });
         await addWindow.ShowDialog(this);
     }
 }

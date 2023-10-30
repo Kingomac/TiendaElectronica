@@ -35,7 +35,7 @@ public partial class AddSelecTipo : ValidableUserControl
 
     public override bool Validated => Selected == null;
 
-    public ValidableUserControl GetNextStageControl()
+    public AparatoCreator GetNextStageControl()
     {
         if (Selected == RadioBtn) return new AddDatosRadio();
         if (Selected == TelevisionBtn) return new AddDatosTelevision();
