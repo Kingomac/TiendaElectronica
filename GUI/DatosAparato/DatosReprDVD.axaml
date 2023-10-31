@@ -30,7 +30,7 @@
                     </Style>
                 </Grid.Styles>
                 <NumericUpDown HorizontalAlignment="Stretch" Grid.Row="0" Name="TiempoGrabacionTxt" />
-                <CheckBox Grid.Row="2" HorizontalAlignment="Center" IsChecked="{Binding BlueRay}" />
+                <CheckBox Grid.Row="2" HorizontalAlignment="Center" IsChecked="{Binding BlueRay}" Name="BlueRayCheck" />
             </Grid>
         </Grid>
     </StackPanel>

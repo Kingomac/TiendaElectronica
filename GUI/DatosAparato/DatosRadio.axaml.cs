@@ -38,7 +38,7 @@ public partial class DatosRadio : AparatoCreator
     public bool FM { get; set; }
     public bool AM_FM { get; set; }
 
-    public override bool Validated { get; }
+    public override bool Validated => AM || FM || AM_FM;
 
     public override Aparato CreateAparato(uint numeroSerie, string modelo)
     {
