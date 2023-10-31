@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using Avalonia.Layout;
@@ -21,7 +22,8 @@ public class ReparacionListDataTemplate : IDataTemplate
         var rep = (Reparacion)param;
         return new Grid
         {
-            ColumnDefinitions = ColumnDefinitions.Parse("25,10,Auto"),
+            ColumnDefinitions = new ColumnDefinitions("25,10,Auto"),
+            Margin = new Thickness(0, 0, 10, 0),
             Children =
             {
                 new PathIcon

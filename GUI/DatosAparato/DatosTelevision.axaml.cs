@@ -1,4 +1,4 @@
-using System;
+using Avalonia.Media;
 using TiendaElectronica.Core.Aparatos;
 
 namespace GUI.AddWindowStaged;
@@ -34,6 +34,6 @@ public partial class DatosTelevision : AparatoCreator
 
     public override void HighlightErrors()
     {
-        throw new NotImplementedException();
+        PulgadasTxt.BorderBrush = Brushes.DarkRed;
     }
 }

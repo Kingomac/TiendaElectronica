@@ -1,4 +1,4 @@
-using System;
+using Avalonia.Media;
 using TiendaElectronica.Core.Aparatos;
 
 namespace GUI.AddWindowStaged;
@@ -40,6 +40,6 @@ public partial class DatosReprDVD : AparatoCreator
 
     public override void HighlightErrors()
     {
-        throw new NotImplementedException();
+        TiempoGrabacionTxt.BorderBrush = Brushes.DarkRed;
     }
 }

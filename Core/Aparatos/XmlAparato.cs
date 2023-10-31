@@ -1,3 +1,4 @@
+using System.Xml;
 using System.Xml.Linq;
 
 namespace TiendaElectronica.Core.Aparatos;
@@ -28,8 +29,12 @@ public class XmlAparato
 
     public static Aparato FromXml(XElement el)
     {
-        var numeroSerie = Convert.ToUInt32(el.Attribute(nameof(Aparato.NumeroSerie)).Value);
-        var modelo = el.Attribute(nameof(Aparato.Modelo)).Value;
+        var numeroSerie = Convert.ToUInt32((el.Attribute(nameof(Aparato.NumeroSerie)) ??
+                                            throw new XmlException(
+                                                "Falta número de serie para el aparato en la etiqueta: " + el.Name))
+            .Value);
+        var modelo = (el.Attribute(nameof(Aparato.Modelo)) ??
+                      throw new XmlException("Falta modelo en la etiqueta " + el.Name)).Value;
         Aparato? ap = null;
         var dic = new Dictionary<string, Action>
         {
@@ -37,7 +42,10 @@ public class XmlAparato
                 "Radio", () =>
                 {
                     BandasRadio bandasRadio;
-                    if (!Enum.TryParse(el.Attribute(nameof(Radio.BandasSoportadas)).Value, out bandasRadio))
+                    if (!Enum.TryParse(
+                            (el.Attribute(nameof(Radio.BandasSoportadas)) ??
+                             throw new XmlException("Falta la banda de radio en la etiqueta " + el.Name)).Value,
+                            out bandasRadio))
                         throw new FormatException();
                     ap = new Radio
                     {
@@ -54,7 +62,9 @@ public class XmlAparato
                     {
                         Modelo = modelo,
                         NumeroSerie = numeroSerie,
-                        Pulgadas = double.Parse(el.Attribute(nameof(Televisor.Pulgadas)).Value)
+                        Pulgadas = double.Parse((el.Attribute(nameof(Televisor.Pulgadas)) ??
+                                                 throw new XmlException("Faltan pulgadas para television en etiqueta " +
+                                                                        el.Name)).Value)
                     };
                 }
             },
@@ -65,8 +75,13 @@ public class XmlAparato
                     {
                         Modelo = modelo,
                         NumeroSerie = numeroSerie,
-                        BlueRay = bool.Parse(el.Attribute(nameof(ReproductorDVD.BlueRay)).Value),
-                        TiempoGrabacion = double.Parse(el.Attribute(nameof(ReproductorDVD.TiempoGrabacion)).Value)
+                        BlueRay = bool.Parse((el.Attribute(nameof(ReproductorDVD.BlueRay)) ??
+                                              throw new XmlException("Falta blueray para reproductor dvd en etiqueta " +
+                                                                     el.Name)).Value),
+                        TiempoGrabacion = double.Parse((el.Attribute(nameof(ReproductorDVD.TiempoGrabacion)) ??
+                                                        throw new XmlException(
+                                                            "Falta tiempo de grabación para reproductor dvd en etiqueta " +
+                                                            el.Name)).Value)
                     };
                 }
             },
@@ -78,7 +93,10 @@ public class XmlAparato
                         Modelo = modelo,
                         NumeroSerie = numeroSerie,
                         TiempoMaximoGrabacion =
-                            double.Parse(el.Attribute(nameof(AdaptadorTDT.TiempoMaximoGrabacion)).Value)
+                            double.Parse((el.Attribute(nameof(AdaptadorTDT.TiempoMaximoGrabacion)) ??
+                                          throw new XmlException(
+                                              "Falta tiempomáximo de grabación para adaptador tdt en etiqueta " +
+                                              el.Name)).Value)
                     };
                 }
             }

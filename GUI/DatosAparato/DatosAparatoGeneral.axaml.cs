@@ -1,3 +1,4 @@
+using Avalonia.Media;
 using TiendaElectronica.Core.Aparatos;
 
 namespace GUI.AddWindowStaged;
@@ -24,10 +25,14 @@ public partial class DatosAparatoGeneral : ValidableUserControl
         PrecioPorHoraTxt.IsReadOnly = isReadOnly;
     }
 
-    public override bool Validated => NumeroSerieTxt.Text.Length > 0 && double.TryParse(NumeroSerieTxt.Text, out _) &&
-                                      ModeloTxt.Text.Length > 0;
+    public override bool Validated => ValidateNumeroSerie && ValidateModelo;
+
+    private bool ValidateNumeroSerie => NumeroSerieTxt.Text.Length > 0 && double.TryParse(NumeroSerieTxt.Text, out _);
+    private bool ValidateModelo => ModeloTxt.Text.Length > 0;
 
     public override void HighlightErrors()
     {
+        if (!ValidateNumeroSerie) NumeroSerieTxt.BorderBrush = Brushes.DarkRed;
+        if (!ValidateModelo) ModeloTxt.BorderBrush = Brushes.DarkRed;
     }
 }

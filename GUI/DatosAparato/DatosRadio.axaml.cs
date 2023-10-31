@@ -1,4 +1,4 @@
-using System;
+using Avalonia.Media;
 using TiendaElectronica.Core.Aparatos;
 
 namespace GUI.AddWindowStaged;
@@ -56,6 +56,8 @@ public partial class DatosRadio : AparatoCreator
 
     public override void HighlightErrors()
     {
-        throw new NotImplementedException();
+        RadioBtn_AM.BorderBrush = Brushes.DarkRed;
+        RadioBtn_FM.BorderBrush = Brushes.DarkRed;
+        RadioBtn_AMFM.BorderBrush = Brushes.DarkRed;
     }
 }

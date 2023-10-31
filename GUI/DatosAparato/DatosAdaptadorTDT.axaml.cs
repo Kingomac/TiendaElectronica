@@ -1,4 +1,3 @@
-using System.Threading;
 using Avalonia.Media;
 using TiendaElectronica.Core.Aparatos;
 
@@ -36,6 +35,5 @@ public partial class DatosAdaptadorTDT : AparatoCreator
     public override void HighlightErrors()
     {
         TiempoMaximoGrabacionTxt.BorderBrush = Brushes.DarkRed;
-        new Timer(_ => { TiempoMaximoGrabacionTxt.BorderBrush = Brushes.LightGray; }, null, 1000, Timeout.Infinite);
     }
 }
