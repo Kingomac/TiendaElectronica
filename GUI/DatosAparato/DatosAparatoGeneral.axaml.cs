@@ -24,7 +24,8 @@ public partial class DatosAparatoGeneral : ValidableUserControl
         PrecioPorHoraTxt.IsReadOnly = isReadOnly;
     }
 
-    public override bool Validated => NumeroSerieTxt.Text.Length > 0 && ModeloTxt.Text.Length > 0;
+    public override bool Validated => NumeroSerieTxt.Text.Length > 0 && double.TryParse(NumeroSerieTxt.Text, out _) &&
+                                      ModeloTxt.Text.Length > 0;
 
     public override void HighlightErrors()
     {

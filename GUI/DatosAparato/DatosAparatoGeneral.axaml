@@ -34,7 +34,8 @@
                 </Grid.Styles>
                 <TextBox HorizontalAlignment="Stretch" Grid.Row="0" Name="NumeroSerieTxt" />
                 <TextBox HorizontalAlignment="Stretch" Grid.Row="2" Name="ModeloTxt" />
-                <NumericUpDown IsVisible="False" HorizontalAlignment="Stretch" Grid.Row="4" Name="PrecioPorHoraTxt" />
+                <NumericUpDown IsVisible="False" IsReadOnly="True" HorizontalAlignment="Stretch" Grid.Row="4"
+                               Name="PrecioPorHoraTxt" />
             </Grid>
         </Grid>
     </StackPanel>

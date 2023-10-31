@@ -20,7 +20,7 @@ public partial class DatosAdaptadorTDT : AparatoCreator
         TiempoMaximoGrabacionTxt.IsReadOnly = isReadOnly;
     }
 
-    public override bool Validated { get; }
+    public override bool Validated => TiempoMaximoGrabacionTxt.Value != null && TiempoMaximoGrabacionTxt.Value >= 0;
 
     public override Aparato CreateAparato(uint numeroSerie, string modelo)
     {

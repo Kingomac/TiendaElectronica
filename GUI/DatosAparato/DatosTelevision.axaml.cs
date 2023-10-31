@@ -20,7 +20,7 @@ public partial class DatosTelevision : AparatoCreator
         PulgadasTxt.IsReadOnly = isReadOnly;
     }
 
-    public override bool Validated { get; }
+    public override bool Validated => PulgadasTxt.Value != null && PulgadasTxt.Value > 0;
 
     public override Aparato CreateAparato(uint numeroSerie, string modelo)
     {

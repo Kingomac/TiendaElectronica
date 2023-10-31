@@ -52,7 +52,7 @@ public class TestDatosAdaptadorTdt
     public void TestHaveInputAndReadOnly1()
     {
         var (form, tiempoMaximoGrabacion) = SetupReadOnly(a1, true);
-        Assert.That(a1.TiempoMaximoGrabacion, Is.EqualTo(double.Parse(tiempoMaximoGrabacion.Text)));
+        Assert.That(a1.TiempoMaximoGrabacion, Is.EqualTo((double)tiempoMaximoGrabacion.Value));
         Assert.True(tiempoMaximoGrabacion.IsReadOnly);
     }
 
@@ -60,7 +60,7 @@ public class TestDatosAdaptadorTdt
     public void TestHaveInputAndReadOnly2()
     {
         var (form, tiempoMaximoGrabacion) = SetupReadOnly(a2, true);
-        Assert.That(a2.TiempoMaximoGrabacion, Is.EqualTo(double.Parse(tiempoMaximoGrabacion.Text)));
+        Assert.That(a2.TiempoMaximoGrabacion, Is.EqualTo((double)tiempoMaximoGrabacion.Value));
         Assert.True(tiempoMaximoGrabacion.IsReadOnly);
     }
 

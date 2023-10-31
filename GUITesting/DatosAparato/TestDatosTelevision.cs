@@ -34,10 +34,18 @@ public class TestDatosTelevision
         };
     }
 
-    private (DatosTelevision tvform, TextBox pulgadas) SetupEmpty()
+    private (DatosTelevision tvform, NumericUpDown pulgadas) SetupEmpty()
     {
         var TvForm = new DatosTelevision();
-        var txtbox = TvForm.Find<TextBox>("PulgadasTxt");
+        var txtbox = TvForm.Find<NumericUpDown>("PulgadasTxt");
+        Assert.NotNull(txtbox);
+        return (TvForm, txtbox)!;
+    }
+
+    private (DatosTelevision tvform, NumericUpDown) SetupReadOnly(Televisor tv, bool readOnly)
+    {
+        var TvForm = new DatosTelevision(tv, readOnly);
+        var txtbox = TvForm.Find<NumericUpDown>("PulgadasTxt");
         Assert.NotNull(txtbox);
         return (TvForm, txtbox)!;
     }
@@ -45,20 +53,16 @@ public class TestDatosTelevision
     [Test]
     public void TestHaveInputAndReadOnly1()
     {
-        var TvForm = new DatosTelevision(t1, true);
-        var txtbox = TvForm.Find<TextBox>("PulgadasTxt");
-        Assert.NotNull(txtbox);
-        Assert.That(t1.Pulgadas, Is.EqualTo(double.Parse(txtbox.Text)));
+        var (tvform, txtbox) = SetupReadOnly(t1, true);
+        Assert.That(t1.Pulgadas, Is.EqualTo((double)txtbox.Value));
         Assert.True(txtbox.IsReadOnly);
     }
 
     [Test]
     public void TestHaveInputAndReadOnly2()
     {
-        var TvForm = new DatosTelevision(t2, true);
-        var txtbox = TvForm.Find<TextBox>("PulgadasTxt");
-        Assert.NotNull(txtbox);
-        Assert.That(t2.Pulgadas, Is.EqualTo(double.Parse(txtbox.Text)));
+        var (tvform, txtbox) = SetupReadOnly(t2, true);
+        Assert.That(t2.Pulgadas, Is.EqualTo((double)txtbox.Value));
         Assert.True(txtbox.IsReadOnly);
     }
 
@@ -66,7 +70,7 @@ public class TestDatosTelevision
     public void TestValidation1()
     {
         var (tvform, pulgadas) = SetupEmpty();
-        pulgadas.Text = "";
+        pulgadas.Value = null;
         Assert.False(tvform.Validated);
     }
 
@@ -74,15 +78,7 @@ public class TestDatosTelevision
     public void TestValidation2()
     {
         var (tvform, pulgadas) = SetupEmpty();
-        pulgadas.Text = "jslkjfsl";
-        Assert.False(tvform.Validated);
-    }
-
-    [Test]
-    public void TestValidation3()
-    {
-        var (tvform, pulgadas) = SetupEmpty();
-        pulgadas.Text = t2.Pulgadas.ToString();
+        pulgadas.Value = (decimal)t2.Pulgadas;
         Assert.True(tvform.Validated);
     }
 }
