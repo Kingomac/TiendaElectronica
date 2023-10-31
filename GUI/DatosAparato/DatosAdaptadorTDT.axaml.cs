@@ -1,4 +1,5 @@
-using System;
+using System.Threading;
+using Avalonia.Media;
 using TiendaElectronica.Core.Aparatos;
 
 namespace GUI.AddWindowStaged;
@@ -34,6 +35,7 @@ public partial class DatosAdaptadorTDT : AparatoCreator
 
     public override void HighlightErrors()
     {
-        throw new NotImplementedException();
+        TiempoMaximoGrabacionTxt.BorderBrush = Brushes.DarkRed;
+        new Timer(_ => { TiempoMaximoGrabacionTxt.BorderBrush = Brushes.LightGray; }, null, 1000, Timeout.Infinite);
     }
 }

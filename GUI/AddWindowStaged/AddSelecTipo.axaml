@@ -6,21 +6,17 @@
                     mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
                     x:Class="GUI.AddWindowStaged.AddSelecTipo"
                     x:DataType="gui:AddSelecTipo">
-    <!--<UserControl.Resources>
-        <Bitmap x:Key="TvIcon">
-            <x:Arguments>
-                <x:String>res/add-icons/tv.svg</x:String>
-            </x:Arguments>
-        </Bitmap>
-        <Bitmap x:Key="RadioIcon">
-            <x:Arguments>
-                <x:String>res/add-icons/radio.svg</x:String>
-            </x:Arguments>
-        </Bitmap>
-    </UserControl.Resources>-->
+    <gui:AparatoCreator.Styles>
+        <Style Selector="Button">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Property="Background" Duration="0:0:0.3" />
+                </Transitions>
+            </Setter>
+        </Style>
+    </gui:AparatoCreator.Styles>
     <StackPanel>
         <TextBlock Margin="20" FontSize="24" TextAlignment="Center">Tipo de aparato</TextBlock>
-        <!--<ListBox Name="AparatoTipoSelect" SelectionMode="Single,AlwaysSelected" />-->
         <Grid RowDefinitions="120,10,120" ColumnDefinitions="120,10,120" HorizontalAlignment="Center">
             <Button Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                     Name="RadioBtn" Click="SelectTipo">

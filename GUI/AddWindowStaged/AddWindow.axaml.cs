@@ -20,6 +20,13 @@ public partial class AddWindow : Window
     private void TransitionBtn_OnClick(object? sender, RoutedEventArgs e)
     {
         if (sender == null) return;
+        var actualStage = (ValidableUserControl)CarouselControl.SelectedItem;
+        if (!actualStage.Validated)
+        {
+            actualStage.HighlightErrors();
+            return;
+        }
+
         switch (stage)
         {
             case 2:

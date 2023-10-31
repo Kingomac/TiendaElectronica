@@ -7,30 +7,18 @@
                           x:Class="GUI.DatosReparacion.DatosReparacionGeneral"
                           Name="AddDatosReparacionUserControl">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
-        <TextBlock Margin="20" FontSize="24" TextAlignment="Center">Datos de la reparación</TextBlock>
-        <StackPanel.Styles>
-            <Style Selector="StackPanel">
-                <Setter Property="Background" Value="Aqua" />
-            </Style>
-        </StackPanel.Styles>
-        <Grid ColumnDefinitions="Auto,300" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Grid Grid.Column="0" RowDefinitions="35,10,35" Classes="aaa"> <!-- horas trabajadas y coste pieza -->
-                <Grid.Styles>
-                    <Style Selector="Grid.aaa">
-                        <Setter Property="Background" Value="Yellow" />
-                    </Style>
-                </Grid.Styles>
+        <TextBlock FontSize="24" HorizontalAlignment="Center">Datos de la reparación</TextBlock>
+        <TextBlock HorizontalAlignment="Center" FontSize="18" Name="TipoReparacionTextBlock" IsVisible="False">simple</TextBlock>
+        <Grid ColumnDefinitions="Auto,300" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 30 0 0">
+            <Grid Grid.Column="0" RowDefinitions="35,10,35"> <!-- horas trabajadas y coste pieza -->
                 <Label VerticalAlignment="Center" Grid.Row="0">Horas trabajadas</Label>
                 <Label VerticalAlignment="Center" Grid.Row="2">Coste piezas</Label>
             </Grid>
             <Grid Grid.Column="1" RowDefinitions="35,10,35" Classes="bbb">
-                <Grid.Styles>
-                    <Style Selector="Grid.bbb">
-                        <Setter Property="Background" Value="HotPink" />
-                    </Style>
-                </Grid.Styles>
-                <NumericUpDown HorizontalAlignment="Stretch" Grid.Row="0" Name="HorasTrabajadasTxt" />
-                <NumericUpDown HorizontalAlignment="Stretch" Grid.Row="2" Name="CostePiezasTxt" />
+                <NumericUpDown BorderThickness="2" BorderBrush="LightGray" HorizontalAlignment="Stretch" Grid.Row="0"
+                               Name="HorasTrabajadasTxt" />
+                <NumericUpDown BorderThickness="2" BorderBrush="LightGray" HorizontalAlignment="Stretch" Grid.Row="2"
+                               Name="CostePiezasTxt" />
             </Grid>
         </Grid>
     </StackPanel>

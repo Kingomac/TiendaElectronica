@@ -7,26 +7,11 @@
                     x:Class="GUI.AddWindowStaged.DatosAdaptadorTDT">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
         <TextBlock Margin="20" FontSize="24" TextAlignment="Center">Datos del adaptador TDT</TextBlock>
-        <StackPanel.Styles>
-            <Style Selector="StackPanel">
-                <Setter Property="Background" Value="Aqua" />
-            </Style>
-        </StackPanel.Styles>
         <Grid ColumnDefinitions="Auto,300" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Grid Grid.Column="0" RowDefinitions="35" Classes="aaa"> <!-- horas trabajadas y coste pieza -->
-                <Grid.Styles>
-                    <Style Selector="Grid.aaa">
-                        <Setter Property="Background" Value="Yellow" />
-                    </Style>
-                </Grid.Styles>
+            <Grid Grid.Column="0" RowDefinitions="35">
                 <Label Grid.Row="0">Tiempo máximo de grabación</Label>
             </Grid>
-            <Grid Grid.Column="1" RowDefinitions="35" Classes="bbb">
-                <Grid.Styles>
-                    <Style Selector="Grid.bbb">
-                        <Setter Property="Background" Value="HotPink" />
-                    </Style>
-                </Grid.Styles>
+            <Grid Grid.Column="1" RowDefinitions="35">
                 <NumericUpDown HorizontalAlignment="Stretch" Grid.Row="0" Name="TiempoMaximoGrabacionTxt" />
             </Grid>
         </Grid>

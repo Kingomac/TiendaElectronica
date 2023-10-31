@@ -15,6 +15,9 @@
             Siguiente
         </Button>
         <Carousel DockPanel.Dock="Top" Name="CarouselControl">
+            <Carousel.PageTransition>
+                <CrossFade Duration="0:00:00.500" />
+            </Carousel.PageTransition>
             <Carousel.Items>
                 <datosReparacion:DatosReparacionGeneral Name="AddDatosReparacion" />
                 <addWindow:DatosAparatoGeneral Name="AddDatosAparatoGeneral" />

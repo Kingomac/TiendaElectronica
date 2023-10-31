@@ -31,6 +31,7 @@
         <entry key="GUI/DatosAparato/DatosTelevision.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/DatosReparacion/DatosReparacion.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/DatosReparacion/DatosReparacionGeneral.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/GeneralStyles.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/MainWindow.axaml" value="GUI/GUI.csproj" />
       </map>
     </option>

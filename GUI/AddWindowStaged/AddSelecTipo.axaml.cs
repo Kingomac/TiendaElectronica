@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Threading;
+using System.Timers;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Media;
+using Avalonia.Threading;
 using TiendaElectronica.Core.Aparatos;
 
 namespace GUI.AddWindowStaged;
@@ -12,6 +13,13 @@ namespace GUI.AddWindowStaged;
 public partial class AddSelecTipo : ValidableUserControl
 {
     private readonly List<Button> botones = new();
+
+    private readonly Timer timer = new()
+    {
+        Enabled = false,
+        Interval = 1000,
+        AutoReset = false
+    };
 
     private readonly ImmutableDictionary<string, Type> tipos = new Dictionary<string, Type>
     {
@@ -30,6 +38,10 @@ public partial class AddSelecTipo : ValidableUserControl
         botones.Add(TelevisionBtn);
         botones.Add(AdaptadorTDTBtn);
         botones.Add(ReproductorDVDBtn);
+        timer.Elapsed += (sender, args) =>
+        {
+            foreach (var boton in botones) Dispatcher.UIThread.InvokeAsync(() => boton.Background = Brushes.LightGray);
+        };
     }
 
     public Geometry RadioIcon => AparatoPaths.Radio;
@@ -39,7 +51,7 @@ public partial class AddSelecTipo : ValidableUserControl
 
     public Button? Selected { get; private set; }
 
-    public override bool Validated => Selected == null;
+    public override bool Validated => Selected != null;
 
     public AparatoCreator GetNextStageControl()
     {
@@ -61,14 +73,8 @@ public partial class AddSelecTipo : ValidableUserControl
 
     public override void HighlightErrors()
     {
-        foreach (var boton in botones)
-        {
-            boton.Background = Brushes.NavajoWhite;
-            var _ = new Timer(obj =>
-            {
-                foreach (var btn in (List<Button>)obj) btn.Background = Brushes.LightGray;
-            }, botones, 0, 1000);
-        }
+        foreach (var boton in botones) boton.Background = Brushes.NavajoWhite;
+        timer.Start();
     }
 
     public class InvalidSelectedButton : ApplicationException

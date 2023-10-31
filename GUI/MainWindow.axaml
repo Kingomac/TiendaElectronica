@@ -8,45 +8,36 @@
         Title="GUI"
         Loaded="Control_OnLoaded"
         MinHeight="300"
-        MinWidth="300"
+        MinWidth="500"
         x:CompileBindings="True"
         Closed="MainWindow_OnClosed">
     <DockPanel>
-        <StackPanel DockPanel.Dock="Left" Classes="leftpanel">
-            <StackPanel.Styles>
-                <Style Selector="Panel.leftpanel">
-                    <Setter Property="Background" Value="Black" />
-                </Style>
-            </StackPanel.Styles>
-            <Label HorizontalAlignment="Center">Reparaciones</Label>
-            <ListBox Name="AparatosList" SelectionChanged="AparatosList_OnSelectionChanged"
-                     SelectionMode="AlwaysSelected,Single">
-                <ListBox.ItemTemplate>
-                    <datosRep:ReparacionListDataTemplate />
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </StackPanel>
+        <Border MinWidth="100" MaxWidth="400" DockPanel.Dock="Left" BorderBrush="LightGray" BorderThickness="0 0 2 0">
+            <!--<ScrollViewer>-->
+            <StackPanel>
+                <Label HorizontalAlignment="Center">Reparaciones</Label>
+                <ListBox Name="AparatosList" SelectionChanged="AparatosList_OnSelectionChanged"
+                         SelectionMode="AlwaysSelected,Single">
+                    <ListBox.ItemTemplate>
+                        <datosRep:ReparacionListDataTemplate />
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+            <!--</ScrollViewer>-->
+        </Border>
         <DockPanel DockPanel.Dock="Right">
             <Menu DockPanel.Dock="Bottom" HorizontalAlignment="Center">
                 <MenuItem Header="Añadir" Name="AddBtn" Click="AddBtn_OnClick" />
                 <MenuItem Header="Borrar" />
                 <MenuItem Header="Modificar" />
             </Menu>
-            <ScrollViewer DockPanel.Dock="Top" Classes="rightpanel">
-                <ScrollViewer.Styles>
-                    <Style Selector="ScrollViewer.rightpanel">
-                        <Setter Property="Background" Value="LightBlue" />
-                    </Style>
-                </ScrollViewer.Styles>
-                <StackPanel Classes="rightpanel" Margin="20">
-                    <Label Margin="3 5 3 1">Datos reparación:</Label>
-                    <Border BorderBrush="Black" BorderThickness="2" CornerRadius="3" Padding="4" Margin="3 0 3 3"
+            <ScrollViewer DockPanel.Dock="Top" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="20">
+                    <Border BorderBrush="LightGray" BorderThickness="2" CornerRadius="3" Padding="4" Margin="3 0 3 3"
                             Name="BorderDatosReparacion" />
-                    <Label Margin="3 5 3 1">Datos dispositivo:</Label>
-                    <Border BorderBrush="Black" BorderThickness="2" CornerRadius="3" Padding="4" Margin="3 0 3 3"
+                    <Border BorderBrush="LightGray" BorderThickness="2" CornerRadius="3" Padding="4" Margin="3 0 3 3"
                             Name="BorderDatosAparatoGeneral" />
-                    <Label Margin="3 5 3 1" Name="LabelDatosDispEsp" />
-                    <Border BorderBrush="Black" BorderThickness="2" CornerRadius="3" Padding="4" Margin="3 0 3 3"
+                    <Border BorderBrush="LightGray" BorderThickness="2" CornerRadius="3" Padding="4" Margin="3 0 3 3"
                             Name="BorderDatosAparatoEspecifico" />
                 </StackPanel>
             </ScrollViewer>

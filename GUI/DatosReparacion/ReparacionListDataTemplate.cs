@@ -27,8 +27,8 @@ public class ReparacionListDataTemplate : IDataTemplate
                 new PathIcon
                 {
                     Data = AparatoPaths.From(rep.Dispositivo),
-                    Width = 25,
-                    Height = 25,
+                    Width = 30,
+                    Height = 30,
                     [Grid.ColumnProperty] = 0
                 },
                 new TextBlock
@@ -36,6 +36,7 @@ public class ReparacionListDataTemplate : IDataTemplate
                     Text = rep.Dispositivo.NumeroSerie.ToString(),
                     VerticalAlignment = VerticalAlignment.Center,
                     TextAlignment = TextAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Stretch,
                     [Grid.ColumnProperty] = 2
                 }
             }
