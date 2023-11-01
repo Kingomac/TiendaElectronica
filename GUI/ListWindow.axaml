@@ -5,7 +5,7 @@
         xmlns:datosRep="clr-namespace:GUI.DatosReparacion"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="GUI.ListWindow"
-        Title="GUI"
+        Title="Gestión Tienda de Electrónica"
         Loaded="Control_OnLoaded"
         MinHeight="300"
         MinWidth="500"

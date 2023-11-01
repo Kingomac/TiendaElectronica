@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="GUI.XmlError"
+        Width="600" Height="400" WindowStartupLocation="CenterScreen"
+        Title="XmlError">
+    <DockPanel>
+        <Button DockPanel.Dock="Bottom" Click="Button_OnClick" HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center">
+            Aceptar
+        </Button>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock FontSize="16" Margin="10" TextWrapping="Wrap">
+                    Se ha producido un error cargando el fichero
+                    reparaciones.xml
+                </TextBlock>
+                <TextBlock Margin="10" TextWrapping="Wrap">
+                    Los detalles de la excepción son:
+                </TextBlock>
+                <TextBlock Name="TextoExcepcion" Margin="10" TextWrapping="Wrap" />
+                <Expander HorizontalAlignment="Stretch" Margin="10" Header="Pila de ejecución" Name="TextoStacktrace" />
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

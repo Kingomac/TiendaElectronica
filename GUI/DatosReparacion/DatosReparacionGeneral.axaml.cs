@@ -19,6 +19,7 @@ public partial class DatosReparacionGeneral : ValidableUserControl
             ReparacionSimple _ => "simple",
             ReparacionCompleja _ => "compleja"
         };
+        TipoReparacionTextBlock.IsVisible = true;
     }
 
     public DatosReparacionGeneral(Reparacion rep, bool isReadOnly) : this(rep)

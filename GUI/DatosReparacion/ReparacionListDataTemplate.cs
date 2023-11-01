@@ -35,7 +35,7 @@ public class ReparacionListDataTemplate : IDataTemplate
                 },
                 new TextBlock
                 {
-                    Text = rep.Dispositivo.NumeroSerie.ToString(),
+                    Text = $"{rep.Dispositivo.NumeroSerie.ToString()} - {rep.Dispositivo.Modelo}",
                     VerticalAlignment = VerticalAlignment.Center,
                     TextAlignment = TextAlignment.Center,
                     HorizontalAlignment = HorizontalAlignment.Stretch,

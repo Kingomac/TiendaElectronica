@@ -39,6 +39,7 @@
         <entry key="GUI/ListWindow43.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/MainWindow.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/WelcomeWindow.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/XmlError.axaml" value="GUI/GUI.csproj" />
       </map>
     </option>
   </component>
