@@ -1,4 +1,3 @@
-using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
@@ -12,8 +11,17 @@ public partial class ConfirmMessageWindow : Window
         DataContext = this;
     }
 
-    public string TitleText { get; set; } = "title";
-    public string BodyText { get; set; } = "body";
+    public string TitleText
+    {
+        get => TitleTxtblk.Text ?? "";
+        set => TitleTxtblk.Text = value;
+    }
+
+    public string BodyText
+    {
+        get => BodyTxtblk.Text ?? "";
+        set => BodyTxtblk.Text = value;
+    }
 
     public Button Button1 => ButtonCancel;
     public Button Button2 => ButtonConfirm;

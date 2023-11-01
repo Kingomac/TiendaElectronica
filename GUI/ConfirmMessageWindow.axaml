@@ -3,28 +3,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:gui="clr-namespace:GUI"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="100"
+        MaxWidth="400" MaxHeight="300"
+        MinWidth="300" MinHeight="100"
         x:Class="GUI.ConfirmMessageWindow"
         Title="ConfirmMessageWindow"
         x:DataType="gui:ConfirmMessageWindow">
-    <Grid RowDefinitions="Auto,10,Auto,30,Auto">
-        <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
-            <TextBlock Grid.Column="0" Text="{Binding TitleText}" />
-            <Button Grid.Column="1" Name="CloseBtn" Click="CloseBtn_OnClick">
-                <Button.Styles>
-                    <Style Selector="Button">
-                        <Setter Property="Width" Value="50" />
-                        <Setter Property="CornerRadius" Value="25" />
-                        <Setter Property="Background" Value="IndianRed" />
-                    </Style>
-                </Button.Styles>
-                x
+    <DockPanel Margin="10">
+        <TextBlock DockPanel.Dock="Top" FontSize="16" Name="TitleTxtblk" TextAlignment="Center" TextWrapping="Wrap"
+                   Text="{Binding TitleText}" />
+        <Grid DockPanel.Dock="Bottom" ColumnDefinitions="*,*">
+            <Button HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="0"
+                    Name="ButtonCancel" Click="CloseBtn_OnClick">
+                cancelar
+            </Button>
+            <Button HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1"
+                    Name="ButtonConfirm">
+                confirmar
             </Button>
         </Grid>
-        <TextBlock Grid.Row="2" TextWrapping="WrapWithOverflow" Text="{Binding BodyText}" />
-        <Grid ColumnDefinitions="*,*" Grid.Row="4">
-            <Button Grid.Column="0" Name="ButtonCancel" Click="CloseBtn_OnClick">cancelar</Button>
-            <Button Grid.Column="1" Name="ButtonConfirm">confirmar</Button>
-        </Grid>
-    </Grid>
+        <TextBlock TextAlignment="Center" Name="BodyTxtblk" TextWrapping="WrapWithOverflow"
+                   Text="{Binding BodyText}" Margin="0 20 0 0" />
+    </DockPanel>
 </Window>

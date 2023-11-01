@@ -63,10 +63,28 @@ public partial class ListWindow : Window
         }
     }
 
-    private void DeleteBtn_OnClick(object? sender, RoutedEventArgs e)
+    private async void DeleteBtn_OnClick(object? sender, RoutedEventArgs e)
     {
         var selected = (Reparacion)AparatosList.SelectedItem;
-        ArchivoReparaciones.Remove(selected);
-        AparatosList.Items.Remove(selected);
+        var confirm = new ConfirmMessageWindow
+        {
+            Width = 350,
+            Height = 200,
+            Title = "¿Estás seguro?",
+            TitleText = "¿Estás seguro de que quieres eliminar esta reparación?",
+            BodyText =
+                $"Esta acción no se puede deshacer. Se eliminará definitivamente la reparación del dispositivo {selected.Dispositivo.Modelo} con número de serie {selected.Dispositivo.NumeroSerie} que ha costado {selected.Precio} euros reparar se eliminará"
+        };
+        confirm.Button1.Content = "Cancelar";
+        confirm.Button2.Content = "Eliminar";
+        confirm.Button2.Click += (_, _) =>
+        {
+            ArchivoReparaciones.Remove(selected);
+            AparatosList.Items.Remove(selected);
+            confirm.Close();
+        };
+        await confirm.ShowDialog(this);
+        /*ArchivoReparaciones.Remove(selected);
+        AparatosList.Items.Remove(selected);*/
     }
 }
