@@ -24,6 +24,7 @@
         <entry key="GUI/AddWindowStaged/DatosRadio.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/AddWindowStaged/DatosReparacion.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/App.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/ConfirmMessageWindow.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/DatosAparato/DatosAdaptadorTDT.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/DatosAparato/DatosAparatoGeneral.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/DatosAparato/DatosRadio.axaml" value="GUI/GUI.csproj" />
