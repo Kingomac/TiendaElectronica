@@ -1,0 +1,78 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:datosRep="clr-namespace:GUI.DatosReparacion"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="GUI.ListWindow"
+        Title="GUI"
+        Loaded="Control_OnLoaded"
+        MinHeight="300"
+        MinWidth="500"
+        x:CompileBindings="True"
+        Closed="MainWindow_OnClosed">
+    <SplitView IsPaneOpen="True" OpenPaneLength="300" DisplayMode="Inline" Name="SplitView">
+        <SplitView.Pane>
+            <Grid>
+                <Grid RowDefinitions="50,60,*" MinWidth="100" MaxWidth="400" Name="BigMenu">
+                    <Panel Grid.Row="0">
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                   FontSize="16"
+                                   Margin="3">
+                            Reparaciones
+                        </TextBlock>
+                        <Button Name="MenuPanelBtn" Click="MenuPanelBtn_OnClick" Width="50" Height="50"
+                                VerticalAlignment="Center"
+                                VerticalContentAlignment="Center" HorizontalAlignment="Right" Background="Transparent">
+                            <PathIcon Width="45"
+                                      Data="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                        </Button>
+                    </Panel>
+                    <Menu Grid.Row="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center">
+                        <MenuItem Header="Añadir" Name="AddBtn" Click="AddBtn_OnClick" />
+                        <MenuItem Header="Borrar" Name="DeleteBtn" Click="DeleteBtn_OnClick" />
+                    </Menu>
+                    <ListBox Grid.Row="2" Name="AparatosList" SelectionChanged="AparatosList_OnSelectionChanged"
+                             SelectionMode="AlwaysSelected,Single">
+                        <ListBox.ItemTemplate>
+                            <datosRep:ReparacionListDataTemplate />
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+                <Grid RowDefinitions="50,50,50" Name="SmallMenu" IsVisible="False">
+                    <Grid.Styles>
+                        <Style Selector="Button">
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="VerticalAlignment" Value="Stretch" />
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter Property="CornerRadius" Value="0" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                        </Style>
+                    </Grid.Styles>
+                    <Button Grid.Row="0" Click="MenuPanelBtn_OnClick" HorizontalAlignment="Stretch"> <!-- menu btn -->
+                        <PathIcon Width="45"
+                                  Data="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </Button>
+                    <Button Grid.Row="1" Click="AddBtn_OnClick"> <!-- add btn -->
+                        <PathIcon Width="45" Data="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                    </Button>
+                    <Button Grid.Row="2" Click="DeleteBtn_OnClick"> <!-- delete btn -->
+                        <PathIcon Width="45"
+                                  Data="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                    </Button>
+                </Grid>
+            </Grid>
+        </SplitView.Pane>
+        <ScrollViewer DockPanel.Dock="Right" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Border BorderBrush="LightGray" BorderThickness="2" CornerRadius="3" Padding="4" Margin="5 10 5 3"
+                        Name="BorderDatosReparacion" />
+                <Border BorderBrush="LightGray" BorderThickness="2" CornerRadius="3" Padding="4" Margin="5 3 5 3"
+                        Name="BorderDatosAparatoGeneral" />
+                <Border BorderBrush="LightGray" BorderThickness="2" CornerRadius="3" Padding="4" Margin="5 3 5 3"
+                        Name="BorderDatosAparatoEspecifico" />
+            </StackPanel>
+        </ScrollViewer>
+    </SplitView>
+</Window>

@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="750" d:DesignHeight="400"
+        CanResize="False"
+        MaxWidth="800"
+        MaxHeight="450"
+        Width="750"
+        Height="400"
+        x:Class="GUI.WelcomeWindow"
+        Title="Bienvenido a la mejor plataforma de gestión de tiendas de electrónica">
+    <Grid RowDefinitions="Auto,10,Auto,20,Auto,20,50" HorizontalAlignment="Center" VerticalAlignment="Center"
+          Margin="50">
+        <TextBlock Grid.Row="0" TextAlignment="Center" TextWrapping="WrapWithOverflow" HorizontalAlignment="Center"
+                   FontSize="32">
+            ¡Bienvenido a la mejor plataforma de gestión de tiendas de electrónica!
+        </TextBlock>
+        <TextBlock Grid.Row="2" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow">En este emocionante viaje hacia el éxito en el mundo de la electrónica, te damos la más cálida de las bienvenidas. Estamos encantados de que hayas decidido unirte a nuestra comunidad de emprendedores y entusiastas de la tecnología. Aquí, en esta plataforma, encontrarás todas las herramientas necesarias para llevar tu tienda de electrónica al siguiente nivel y alcanzar tus metas empresariales.</TextBlock>
+        <TextBlock Grid.Row="4" HorizontalAlignment="Center" FontSize="24">¿Por qué no empiezas añadiendo una nueva reparación?</TextBlock>
+        <Button Grid.Row="6" Click="AddReparacionBtn_OnClick" VerticalAlignment="Stretch"
+                VerticalContentAlignment="Center" FontSize="18" HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center" Name="AddReparacionBtn" Content="Añadir la primera reparación">
+            <Button.Styles>
+                <Style Selector="Button:pointerover /template/ ContentPresenter">
+                    <Setter Property="Background" Value="NavajoWhite" />
+                </Style>
+                <Style Selector="Button">
+                    <Setter Property="Background" Value="LightGray" />
+                </Style>
+            </Button.Styles>
+        </Button>
+    </Grid>
+</Window>

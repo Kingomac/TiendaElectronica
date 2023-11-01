@@ -29,10 +29,15 @@
         <entry key="GUI/DatosAparato/DatosRadio.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/DatosAparato/DatosReprDVD.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/DatosAparato/DatosTelevision.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/DatosListaReparacion/DatosReparacionView.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/DatosListaReparacion/EmptyListView.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/DatosReparacion/DatosReparacion.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/DatosReparacion/DatosReparacionGeneral.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/GeneralStyles.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/ListWindow.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/ListWindow43.axaml" value="GUI/GUI.csproj" />
         <entry key="GUI/MainWindow.axaml" value="GUI/GUI.csproj" />
+        <entry key="GUI/WelcomeWindow.axaml" value="GUI/GUI.csproj" />
       </map>
     </option>
   </component>

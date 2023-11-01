@@ -18,6 +18,8 @@ public class ArchivoReparaciones : IEnumerable<Reparacion>
         }
     }
 
+    public int Count => Reparaciones.Count;
+
     protected List<Reparacion> Reparaciones { get; }
 
     public IEnumerator<Reparacion> GetEnumerator()
@@ -43,5 +45,10 @@ public class ArchivoReparaciones : IEnumerable<Reparacion>
     public virtual void Add(Reparacion rep)
     {
         Reparaciones.Add(rep);
+    }
+
+    public bool Remove(Reparacion rep)
+    {
+        return Reparaciones.Remove(rep);
     }
 }

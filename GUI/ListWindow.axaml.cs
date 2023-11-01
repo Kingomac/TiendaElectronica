@@ -8,14 +8,14 @@ using TiendaElectronica.Core.Reparaciones;
 
 namespace GUI;
 
-public partial class MainWindow : Window
+public partial class ListWindow : Window
 {
-    public MainWindow()
+    public ListWindow()
     {
         InitializeComponent();
     }
 
-    public ArchivoReparaciones ArchivoReparaciones { get; set; } = new();
+    public required ArchivoReparaciones ArchivoReparaciones { get; init; }
 
     private void Control_OnLoaded(object? sender, RoutedEventArgs e)
     {
@@ -43,5 +43,30 @@ public partial class MainWindow : Window
     private void MainWindow_OnClosed(object? sender, EventArgs e)
     {
         ArchivoReparaciones.GuardarFichero();
+    }
+
+    private void MenuPanelBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        if (SplitView.DisplayMode == SplitViewDisplayMode.Inline)
+        {
+            SplitView.DisplayMode = SplitViewDisplayMode.CompactInline;
+            SplitView.OpenPaneLength = 50;
+            SmallMenu.IsVisible = true;
+            BigMenu.IsVisible = false;
+        }
+        else
+        {
+            SplitView.DisplayMode = SplitViewDisplayMode.Inline;
+            SplitView.OpenPaneLength = 300;
+            SmallMenu.IsVisible = false;
+            BigMenu.IsVisible = true;
+        }
+    }
+
+    private void DeleteBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var selected = (Reparacion)AparatosList.SelectedItem;
+        ArchivoReparaciones.Remove(selected);
+        AparatosList.Items.Remove(selected);
     }
 }

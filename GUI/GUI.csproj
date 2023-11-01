@@ -71,4 +71,9 @@
     <ItemGroup>
         <None Remove="AddDatosDispositivoGeneral.axaml.cs~"/>
     </ItemGroup>
+
+
+    <ItemGroup>
+        <UpToDateCheckInput Remove="DatosListaReparacion\EmptyListView.axaml"/>
+    </ItemGroup>
 </Project>
